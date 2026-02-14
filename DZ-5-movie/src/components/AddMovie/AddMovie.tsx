@@ -1,5 +1,6 @@
 import { useState } from "react"
 
+
 interface AddMovieProps {
   onAddMovie: (title: string) => void
 }

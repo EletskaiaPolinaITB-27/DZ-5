@@ -1,3 +1,5 @@
+import styles from "./style.module.css"
+
 interface LikeDislikeProps {
   likeStatus: "like" | "dislike" | null
   onLike: () => void
@@ -10,7 +12,7 @@ export const LikeDislike = ({
   onDislike
 }: LikeDislikeProps) => {
   return (
-    <div>
+    <div className={styles.buttons}>
       <button onClick={onLike}>
         {likeStatus === "like" ? "👍" : "Like"}
       </button>

@@ -1,6 +1,9 @@
 import { useState } from "react"
 import { AddMovie } from "../AddMovie/AddMovie" 
 import { MovieList } from "../MovieList/MovieList" 
+import styles from "./style.module.css"
+
+
 interface Movie {
   id: number
   title: string
@@ -55,7 +58,7 @@ export const Movies = () => {
   }
 
   return (
-    <div className="movies-container">
+    <div className={styles.container}>
       <AddMovie onAddMovie={onAddMovie} />
       <MovieList
         movies={movies}

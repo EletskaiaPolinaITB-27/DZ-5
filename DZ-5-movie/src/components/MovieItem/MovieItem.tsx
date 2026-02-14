@@ -1,5 +1,6 @@
 import React from "react"
 import { LikeDislike } from "../LikeDislike/LikeDislike"
+import styles from "./style.module.css"
 
 interface Movie {
   id: number
@@ -29,7 +30,7 @@ const handleCheckbox = (_e: React.ChangeEvent<HTMLInputElement>) => {
 }
 
 return (
-    <div className="movie-item">
+    <div className={styles.movie}>
       <input
         type="checkbox"
         checked={movie.watched}
