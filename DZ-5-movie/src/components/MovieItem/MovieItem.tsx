@@ -1,5 +1,5 @@
 import React from "react"
-
+import { LikeDislike } from "../LikeDislike/LikeDislike"
 
 interface Movie {
   id: number
@@ -28,6 +28,28 @@ const handleCheckbox = (_e: React.ChangeEvent<HTMLInputElement>) => {
   onToggleWatched(movie.id)
 }
 
+return (
+    <div className="movie-item">
+      <input
+        type="checkbox"
+        checked={movie.watched}
+        onChange={handleCheckbox}
+      />
 
+      <span className={movie.watched ? "watched" : ""}>
+        {movie.title}
+      </span>
+
+      <button onClick={() => onDelete(movie.id)}>❌</button>
+
+      {movie.watched && (
+        <LikeDislike
+          likeStatus={movie.likeStatus}
+          onLike={() => onLike(movie.id)}
+          onDislike={() => onDislike(movie.id)}
+        />
+      )}
+    </div>
+  )
 
 }

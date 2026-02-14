@@ -15,4 +15,26 @@ interface MovieListProps {
   onDislike: (id: number) => void
 }
 
+export const MovieList = ({
+  movies,
+  onDeleteMovie,
+  onToggleWatched,
+  onLike,
+  onDislike
+}: MovieListProps) => {
+  return (
+    <div>
+      {movies.map(movie => (
+        <MovieItem
+          key={movie.id}
+          movie={movie}
+          onDelete={onDeleteMovie}
+          onToggleWatched={onToggleWatched}
+          onLike={onLike}
+          onDislike={onDislike}
+        />
+      ))}
+    </div>
+  )
+}
 
